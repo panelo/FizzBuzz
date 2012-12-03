@@ -11,15 +11,16 @@ if(isset($_POST['submit'])) {
 		for($i = 1; $i < 10; $i++) {
 			$init = $integer + $i;
 			if ($init % 3 == 0) {
-				$val .= "Fizz ";
+				$series .= "Fizz ";
 			}
 			elseif ($init % 5 == 0) {
-				$val .= "Buzz ";
+				$series .= "Buzz ";
 			}
 			else {
-				$val .= $integer + $i." ";
+				$series .= $integer + $i." ";
 			}
 		}
+		$val .= "for f[".$integer."..".$init."], the output is ".$series."";
 	}
 }
 ?>
