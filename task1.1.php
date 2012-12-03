@@ -1,6 +1,6 @@
 <?php
 if(isset($_POST['submit'])) {
-	$integer = trim( $_POST["integer"]);
+	$integer = trim($_POST["integer"]);
 	//check if it's a positive number
 	if ($integer<="0" || $integer=="") {
 		$val = "<p>ERROR:</p>";
@@ -9,7 +9,13 @@ if(isset($_POST['submit'])) {
 	else {
 		$val = "<p>RESULTS:</p>";
 		for($i = 1; $i < 10; $i++) {
-			$val .= $integer + $i." ";
+			$init = $integer + $i;
+			if ($init % 3 == 0) {
+				$val .= "Fizz ";
+			}
+			else {
+				$val .= $integer + $i." ";
+			}
 		}
 	}
 }
@@ -30,7 +36,7 @@ if(isset($_POST['submit'])) {
   <li>"Buzz" if a multiple of 5</li>
   <li>The integer itself otherwise.  </li>
 </ul>
-Enter a number: <input name="integer" type="text" \size="5" /> <input name="submit" type="submit" />
+Enter a number: <input name="integer" type="text" size="5" /> <input name="submit" type="submit" />
 </form>
 <?php
 	if(isset($_POST['integer'])) {
