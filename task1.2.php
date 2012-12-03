@@ -9,13 +9,20 @@ if(isset($_POST['submit'])) {
 	//create series of numbers and check if divisible by 3 and 5
 	else {
 		$val = "<p>RESULTS:</p>";
-		for($i = 1; $i < 10; $i++) {
+		for($i = 1; $i < 30; $i++) {
 			$init = $integer + $i;
 			if ($init % 3 == 0) {
 				$series .= "Fizz ";
+				$fizz = "1";
 			}
 			elseif ($init % 5 == 0) {
 				$series .= "Buzz ";
+				$buzz = "2";
+			}
+			elseif ($fizz=="1" && $buzz=="2") {
+				$series .= "Bazz ";
+				$fizz = "0";
+				$buzz = "0";
 			}
 			else {
 				$series .= $integer + $i." ";
