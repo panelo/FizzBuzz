@@ -1,14 +1,19 @@
 <?php
 if(isset($_POST['submit'])) {
 	$integer =trim( $_REQUEST["integer"]);
+	$integer = trim( $_POST["integer"]);
 	//check if it's a positive number
 	if ($integer<="0" || $integer=="") {
 		$val = "<p>ERROR:</p>";
 		$val .= "Enter a positive value!";
+		$val .= "Enter a positive numeric value!";
 	}
 	else {
 		$val = "<p>RESULTS:</p>";
 		$val .= $integer;	
+		for($i = 1; $i < 10; $i++) {
+			$val .= $integer + $i." ";
+		}
 	}
 }
 ?>
@@ -29,9 +34,11 @@ if(isset($_POST['submit'])) {
   <li>The integer itself otherwise.  </li>
 </ul>
 Enter a number: <input name="integer" type="text" value="" size="5" /> <input name="submit" type="submit" />
+Enter a number: <input name="integer" type="text" \size="5" /> <input name="submit" type="submit" />
 </form>
 <?php
 	if(isset($_POST['submit'])) {
+	if(isset($_POST['integer'])) {
 		echo $val;
 	}
 ?>
