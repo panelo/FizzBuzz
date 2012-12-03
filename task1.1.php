@@ -6,5 +6,13 @@
 </head>
 
 <body>
+<p>Write a script that accepts a positive integer range and, for each increment in the range, prints:</p>
+<ul>
+  <li>"Fizz" if a multiple of 3
+  </li>
+  <li>"Buzz" if a multiple of 5</li>
+  <li>The integer itself otherwise.  </li>
+</ul>
+Enter a number: <input name="integer" type="text" value="" size="5" /> <input name="submit" type="submit" />
 </body>
 </html>
