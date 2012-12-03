@@ -13,6 +13,9 @@ if(isset($_POST['submit'])) {
 			if ($init % 3 == 0) {
 				$val .= "Fizz ";
 			}
+			elseif ($init % 5 == 0) {
+				$val .= "Buzz ";
+			}
 			else {
 				$val .= $integer + $i." ";
 			}
