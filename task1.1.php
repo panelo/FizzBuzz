@@ -1,3 +1,17 @@
+<?php
+if(isset($_POST['submit'])) {
+	$integer =trim( $_REQUEST["integer"]);
+	//check if it's a positive number
+	if ($integer<="0" || $integer=="") {
+		$val = "<p>ERROR:</p>";
+		$val .= "Enter a positive value!";
+	}
+	else {
+		$val = "<p>RESULTS:</p>";
+		$val .= $integer;	
+	}
+}
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -6,6 +20,7 @@
 </head>
 
 <body>
+<form method="post" name="fizzbuzz">
 <p>Write a script that accepts a positive integer range and, for each increment in the range, prints:</p>
 <ul>
   <li>"Fizz" if a multiple of 3
@@ -14,5 +29,11 @@
   <li>The integer itself otherwise.  </li>
 </ul>
 Enter a number: <input name="integer" type="text" value="" size="5" /> <input name="submit" type="submit" />
+</form>
+<?php
+	if(isset($_POST['submit'])) {
+		echo $val;
+	}
+?>
 </body>
 </html>
