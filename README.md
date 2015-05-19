@@ -1,2 +1,2 @@
-# PG
-Just some test work for a company
+# FizzBuzz
+Displaying Fizz and Buzz!
